@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState, useEffect} from "react"
+import {useState, useEffect, useRef} from "react"
 
 function GetUsers() {
     const [users, setUsers] = useState([])
@@ -9,7 +9,7 @@ function GetUsers() {
             .then(res => res.json())
             .then(data => {
                 setUsers(data.allUsers)
-                console.log(data)
+
             })
     },[])
 
@@ -18,9 +18,11 @@ function GetUsers() {
         fetch('http://localhost:3001/delete/'+id)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setUsers(data.allUsers)
             })
+    }
+    function update(e){
+        let id = e.target.id
     }
 
 
@@ -58,9 +60,20 @@ function GetUsers() {
                 </div>
                 <div>
                     <p className='delete' id={item._id} onClick={deleteUser}>Ištrinti</p>
-                    <p className='delete' id={item._id}>Redaguoti</p>
+                    <p className='delete' id={item._id} onClick={update}>Redaguoti</p>
                 </div>
             </div>)}
+            <div className="updateUser">
+                <h3>Redaguoti</h3>
+                <input type='text' placeholder="Vardas"/>
+                <input type='number' placeholder="Amžius"/>
+                <input type='text' placeholder="El.paštas"/>
+                <input type='text' placeholder="Slaptažodis"/>
+                <div>
+                    <button>Redaguoti</button>
+                </div>
+
+            </div>
         </div>
     );
 }

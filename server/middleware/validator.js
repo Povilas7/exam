@@ -1,7 +1,6 @@
 
 module.exports = {
     check: (req, res, next) => {
-        console.log(req.body)
         let {name, age, email, password} = req.body
         function error(status, msg){
             return res.send({error:status, messages: msg})

@@ -26,7 +26,6 @@ function UploadUser() {
             .then(res => res.json())
             .then(data => {
                 setError(data.messages)
-                console.log(data)
             })
     }
 

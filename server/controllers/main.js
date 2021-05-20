@@ -26,5 +26,8 @@ module.exports = {
         let users = await userDb.find()
         res.send({error: false, msg: "Vartotojas ištrintas", allUsers: users})
     },
+    updateUser: async (req, res) => {
+
+    }
 
 }

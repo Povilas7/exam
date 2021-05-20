@@ -6,4 +6,5 @@ const user = require('../controllers/main')
 router.post("/upload", valid.check, user.upload)
 router.get("/getAllUsers", user.getAllUsers)
 router.get("/delete/:id", user.deleteUser)
+
 module.exports = router
