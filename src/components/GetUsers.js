@@ -13,6 +13,16 @@ function GetUsers() {
             })
     },[])
 
+    function deleteUser(e){
+        let id = e.target.id
+        fetch('http://localhost:3001/delete/'+id)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setUsers(data.allUsers)
+            })
+    }
+
 
     return (
         <div>
@@ -47,7 +57,7 @@ function GetUsers() {
 
                 </div>
                 <div>
-                    <p className='delete' id={item._id}>Ištrinti</p>
+                    <p className='delete' id={item._id} onClick={deleteUser}>Ištrinti</p>
                     <p className='delete' id={item._id}>Redaguoti</p>
                 </div>
             </div>)}

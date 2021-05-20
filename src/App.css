@@ -5,7 +5,7 @@
 }
 .uploadBox{
     width: 200px;
-    height: 400px;
+    height: 350px;
     background-color: #8d8d8d;
     border-radius: 5px;
     margin: 50px;
@@ -60,19 +60,7 @@ button{
 h3{
     margin: 5px;
 }
-.plus{
-    background-color: green;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-}
-.plus:hover{
-    transform: scale(1.2);
-}
+
 .delete{
     margin: 5px;
     cursor: pointer;
@@ -83,9 +71,22 @@ h3{
     transform: scale(1.1);
 }
 .link{
-    margin: 10px;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8d8d8d;
+    height: 30px;
+    border-radius: 5px;
+}
+.link:hover{
+    transform: scale(1.1);
 }
 .text{
     text-decoration: none;
-    color: #4e4e4e;
+    color: #ffffff;
+}
+.mt-20{
+    margin-top: 20px;
 }

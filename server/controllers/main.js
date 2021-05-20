@@ -20,6 +20,11 @@ module.exports = {
         let users = await userDb.find()
         res.send({allUsers: users})
 
-    }
+    },
+    deleteUser: async (req, res) => {
+        await userDb.findByIdAndDelete({_id: req.params.id})
+        let users = await userDb.find()
+        res.send({error: false, msg: "Vartotojas ištrintas", allUsers: users})
+    },
 
 }
