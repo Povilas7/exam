@@ -6,6 +6,7 @@ function UploadUser() {
     const ageRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
+    const [error, setError] = useState([])
 
     function submit(){
         const user = {
@@ -24,6 +25,7 @@ function UploadUser() {
         fetch('http://localhost:3001/upload', options)
             .then(res => res.json())
             .then(data => {
+                setError(data.messages)
                 console.log(data)
             })
     }
@@ -38,7 +40,7 @@ function UploadUser() {
             <div>
                 <button onClick={submit}>Patvirtinti</button>
             </div>
-            <p></p>
+            <p className="error">{error}</p>
 
         </div>
     );
