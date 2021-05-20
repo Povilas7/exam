@@ -16,5 +16,10 @@ module.exports = {
         })
 
     },
+    getAllUsers: async (req, res) => {
+        let users = await userDb.find()
+        res.send({allUsers: users})
+
+    }
 
 }

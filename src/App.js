@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Toolbar from "./components/Toolbar";
 import UploadUser from "./components/UploadUser";
+import GetUsers from "./components/GetUsers";
+
 function App() {
   return (
       <Router>
@@ -25,12 +27,7 @@ function App() {
             </Route>
             <Route path='/getallusers'>
               <div>
-                2
-              </div>
-            </Route>
-            <Route path='/valid'>
-              <div>
-                3
+                <GetUsers/>
               </div>
             </Route>
 
